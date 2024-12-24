@@ -60,5 +60,4 @@ Install all the necessary libraries by running the following command:
    ```
 ### Dashboard View
 ![Halaman1](https://github.com/srinamira/Bike_Analysis/blob/main/submission/image/Halaman%201.jpeg)
-
-
+![Halaman1](https://github.com/srinamira/Bike_Analysis/blob/main/submission/image/Halaman%201.jpeg)
