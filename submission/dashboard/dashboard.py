@@ -111,25 +111,3 @@ with col2:
 with col3:
     hourly_peak = hourly_rentals[user_column].idxmax()
     st.metric("Peak Hour", f"{hourly_peak}:00")
-
-# Additional insights
-st.subheader("Additional Insights")
-col1, col2 = st.columns(2)
-
-with col1:
-    st.write("Seasonal Trends")
-    season_impact = filtered_day_data.groupby('season').agg({
-        user_column: 'mean'
-    }).reset_index()
-    fig_season = px.bar(season_impact, x='season', y=user_column,
-                       title=f'Average Rentals ({selected_user_type}) by Season')
-    st.plotly_chart(fig_season, use_container_width=True)
-
-with col2:
-    st.write("Weather Impact")
-    weather_impact = filtered_day_data.groupby('weathersit').agg({
-        user_column: 'mean'
-    }).reset_index()
-    fig_weather = px.bar(weather_impact, x='weathersit', y=user_column,
-                        title=f'Average Rentals ({selected_user_type}) by Weather')
-    st.plotly_chart(fig_weather, use_container_width=True)
